@@ -1,0 +1,21 @@
+group 'com.vaskoz'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.9
+
+repositories {
+    mavenCentral()
+}
+
+ext.junitJupiterVersion  = '5.0.0'
+ext.junitPlatformVersion = '1.0.0'
+
+dependencies {
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    // Only needed to run tests in an (IntelliJ) IDE(A) that bundles an older version
+    testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+}
