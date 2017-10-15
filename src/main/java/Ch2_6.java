@@ -12,12 +12,23 @@ public class Ch2_6 {
             this.y = y;
         }
 
+        /**
+         * Translate the position of this point.
+         * @param x
+         * @param y
+         * @return mutates the existing Point
+         */
         public Point translate(double x, double y) {
             this.x += x;
             this.y += y;
             return this;
         }
 
+        /**
+         * Scale the position of this point.
+         * @param scale
+         * @return mutates the existing Point
+         */
         public Point scale(double scale) {
             this.x *= scale;
             this.y *= scale;

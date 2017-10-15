@@ -7,10 +7,21 @@ public class Ch2_5 {
             this.y = y;
         }
 
+        /**
+         * Translates a Point to a new position
+         * @param x
+         * @param y
+         * @return a new Point that has been translated
+         */
         public Point translate(double x, double y) {
             return new Point(this.x+x, this.y+y);
         }
 
+        /**
+         * Scale the point
+         * @param scale factor to scale x & y by
+         * @return a new Point that has been scaled
+         */
         public Point scale(double scale) {
             return new Point(this.x*scale, this.y*scale);
         }
