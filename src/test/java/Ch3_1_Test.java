@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Ch3_1_Test {
     @ParameterizedTest
-    @CsvSource({"'0.0,20.0', 10.0," +
-            "'10.0,20.0,30.0', 20.0" +
+    @CsvSource({"'0.0,20.0', 10.0,",
+            "'10.0,20.0,30.0', 20.0",
             "'1.0,1.0,1.0,3.0,3.0,3.0', 2.0"})
     public void testEmployeeAverageSalary(String data, double average) {
         Ch3_1.Measurable[] input = Arrays.stream(data.split(","))
