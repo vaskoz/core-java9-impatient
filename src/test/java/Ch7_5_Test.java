@@ -1,0 +1,28 @@
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class Ch7_5_Test {
+    private static List<String> expected = List.of("a", "b", "c", "d", "e");
+    private List<String> input = Arrays.asList("a", "e", "c", "d", "b");
+    private int i = 1, j = 4;
+
+    @Test
+    public void testRandomAccessSwap() {
+        this.input = new ArrayList<>(this.input);
+        Ch7_5.swap(this.input, i, j);
+        assertEquals(expected, this.input);
+    }
+
+    @Test
+    public void testSequentialAccessSwap() {
+        this.input = new LinkedList<>(this.input);
+        Ch7_5.swap(this.input, i, j);
+        assertEquals(expected, this.input);
+    }
+}
