@@ -1,11 +1,10 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Ch3_14_Test {
     @Test
     public void testRunInOrder() {
-        boolean[] expected = new boolean[]{true, true, true, true, true};
         boolean[] result = new boolean[5];
         Runnable[] list = new Runnable[]{
                 () -> result[0] = true,
@@ -16,6 +15,8 @@ public class Ch3_14_Test {
         };
         Runnable orderedRun = Ch3_14.inOrder(list);
         orderedRun.run();
-        assertArrayEquals(expected, result);
+        for (boolean b : result) {
+            assertTrue(b);
+        }
     }
 }
