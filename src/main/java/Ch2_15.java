@@ -25,23 +25,7 @@ public class Ch2_15 {
                 this.quantity = quantity;
                 this.unitPrice = unitPrice;
             }
-
-            public double price() {
-                return quantity * unitPrice;
-            }
-
-            public String getDescription() {
-                return description;
-            }
-
-            public int getQuantity() {
-                return quantity;
-            }
-
-            public double getUnitPrice() {
-                return unitPrice;
-            }
-
+            
             @Override
             public String toString() {
                 return "Item{" +
