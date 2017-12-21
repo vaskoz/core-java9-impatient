@@ -14,7 +14,8 @@ public class Ch4_10_Test {
             "public java.lang.String toString[]\n" +
             "public native int hashCode[]\n" +
             "public final native java.lang.Class getClass[]\n" +
-            "protected native java.lang.Object clone[]\n" +
+            // https://docs.oracle.com/javase/specs/jls/se9/html/jls-10.html#jls-10.7
+            "protected native java.lang.Object clone[]\n" + // for an array this should be public
             "public final native void notify[]\n" +
             "public final native void notifyAll[]\n" +
             "private static native void registerNatives[]\n";
