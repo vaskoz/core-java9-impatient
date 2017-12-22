@@ -1,6 +1,4 @@
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.math.BigInteger;
 
@@ -12,7 +10,9 @@ public class Ch3_6_Test {
     public void testSquareSequence() {
         Ch3_6.Sequence<BigInteger> sequence = new Ch3_6.SquareSequence();
         for (int i = 1; i <= 100; i++) {
-            assertEquals(Integer.toString(i*i), sequence.next().toString());
+            assertTrue(sequence.hasNext());
+            assertEquals(Integer.toString(i * i), sequence.next().toString());
         }
+        assertTrue(sequence.hasNext());
     }
 }
