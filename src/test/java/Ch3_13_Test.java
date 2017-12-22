@@ -25,15 +25,6 @@ public class Ch3_13_Test {
         }
     }
 
-    @Test
-    public void testFileSort() {
-        File[] input = new File[]{
-                expected[4], expected[2], expected[0], expected[1], expected[3]
-        };
-        Ch3_13.sortFiles(input);
-        assertArrayEquals(expected, input);
-    }
-
     @AfterAll
     public static void teardown() {
         for (File f : expected) {
@@ -43,5 +34,23 @@ public class Ch3_13_Test {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Test
+    public void testFileSort() {
+        File[] input = new File[]{
+                expected[4], expected[2], expected[0], expected[1], expected[3]
+        };
+        Ch3_13.sortFiles(input);
+        assertArrayEquals(expected, input);
+    }
+
+    @Test
+    public void testFileSortDifferentOrder() {
+        File[] input = new File[]{
+                expected[0], expected[1], expected[2], expected[4], expected[3]
+        };
+        Ch3_13.sortFiles(input);
+        assertArrayEquals(expected, input);
     }
 }
