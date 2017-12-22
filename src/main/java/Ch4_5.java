@@ -18,7 +18,7 @@ public class Ch4_5 {
         }
 
         @Override
-        public Object clone() throws CloneNotSupportedException {
+        public Point clone() {
             return new Point(this.x, this.y);
         }
 
@@ -53,8 +53,8 @@ public class Ch4_5 {
         }
 
         @Override
-        public Object clone() throws CloneNotSupportedException {
-            return this.point.clone();
+        public Shape clone() throws CloneNotSupportedException {
+            throw new CloneNotSupportedException("Please use the constructor");
         }
 
         @Override
@@ -86,7 +86,7 @@ public class Ch4_5 {
         }
 
         @Override
-        public Object clone() throws CloneNotSupportedException {
+        public Circle clone() {
             return new Circle(this.point, this.radius);
         }
 
@@ -136,7 +136,7 @@ public class Ch4_5 {
         }
 
         @Override
-        public Object clone() throws CloneNotSupportedException {
+        public Rectangle clone() {
             return new Rectangle(this.point, this.width, this.height);
         }
 
@@ -167,7 +167,7 @@ public class Ch4_5 {
         }
 
         @Override
-        public Object clone() throws CloneNotSupportedException {
+        public Line clone() {
             return new Line(this.from, this.to);
         }
 
