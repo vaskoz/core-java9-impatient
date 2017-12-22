@@ -6,7 +6,6 @@ public class Ch4_9 {
             StringBuilder sb = new StringBuilder();
             Class clazz = obj.getClass();
             for (Field f : clazz.getDeclaredFields()) {
-                f.setAccessible(true);
                 sb.append(f.getName());
                 sb.append(":");
                 try {
@@ -21,7 +20,9 @@ public class Ch4_9 {
     }
 
     class A {
-        private int x, y, z;
+        public final int z;
+        protected final int y;
+        private final int x;
 
         public A(int x, int y, int z) {
             this.x = x;
@@ -36,7 +37,8 @@ public class Ch4_9 {
     }
 
     class B {
-        private String a, b, c;
+        private final String a, b;
+        String c;
 
         public B(String a, String b, String c) {
             this.a = a;
