@@ -28,7 +28,9 @@ public class Ch4_4_Test {
         Ch4_4.Circle circle = app.new Circle(center, radius);
         circle.moveBy(moveX, moveY);
         Ch4_4.Point newCenter = circle.getCenter();
-        assertEquals(app.new Point(expectedX, expectedY), newCenter);
+        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        assertEquals(expected, newCenter);
+        assertEquals(expected.hashCode(), newCenter.hashCode());
     }
 
     @ParameterizedTest
@@ -39,7 +41,9 @@ public class Ch4_4_Test {
         Ch4_4.Rectangle rectangle = app.new Rectangle(topleft, width, height);
         rectangle.moveBy(moveX, moveY);
         Ch4_4.Point newCenter = rectangle.getCenter();
-        assertEquals(app.new Point(expectedX, expectedY), newCenter);
+        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        assertEquals(expected, newCenter);
+        assertEquals(expected.hashCode(), newCenter.hashCode());
     }
 
     @ParameterizedTest
@@ -51,6 +55,8 @@ public class Ch4_4_Test {
         Ch4_4.Line line = app.new Line(from, to);
         line.moveBy(moveX, moveY);
         Ch4_4.Point newCenter = line.getCenter();
-        assertEquals(app.new Point(expectedX, expectedY), newCenter);
+        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        assertEquals(expected, newCenter);
+        assertEquals(expected.hashCode(), newCenter.hashCode());
     }
 }
