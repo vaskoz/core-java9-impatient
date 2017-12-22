@@ -24,7 +24,11 @@ public class Ch4_11_Test {
     public void reflectiveHelloWorld() {
         ByteArrayOutputStream out = new ByteArrayOutputStream(100);
         System.setOut(new PrintStream(out));
-        Ch4_11.main();
+        try {
+            Ch4_11.main();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         assertEquals(Ch4_11.message + "\n", out.toString());
     }
 }
