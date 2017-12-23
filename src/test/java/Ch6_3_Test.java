@@ -12,6 +12,8 @@ public class Ch6_3_Test {
         table.set("bar", 2);
         table.set("baz", 3);
         assertEquals(3, (int) table.get("baz"));
+        table.set("baz", 4);
+        assertEquals(4, (int) table.get("baz"));
         table.remove("baz");
         assertNull(table.get("baz"));
         assertEquals(2, (int) table.get("bar"));
@@ -22,5 +24,6 @@ public class Ch6_3_Test {
         assertNull(table.get("foo"));
         assertNull(table.get("bar"));
         assertNull(table.get("baz"));
+        table.remove("doesn't exist");
     }
 }
