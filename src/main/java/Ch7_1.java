@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class Ch7_1 {
     public static List<Integer> sieveOfErathostenes(int n) {
@@ -35,7 +39,7 @@ public class Ch7_1 {
             }
         }
         List<Integer> result = new ArrayList<>(numbers.cardinality());
-        for (int i = numbers.nextSetBit(0); i >= 0; i = numbers.nextSetBit(i+1)) {
+        for (int i = numbers.nextSetBit(0); i >= 0; i = numbers.nextSetBit(i + 1)) {
             result.add(i);
             if (i == Integer.MAX_VALUE) {
                 break; // or (i+1) would overflow
