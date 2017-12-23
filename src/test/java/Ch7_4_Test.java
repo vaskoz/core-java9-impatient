@@ -15,6 +15,7 @@ public class Ch7_4_Test {
 
     @Test
     public void testRemoveTargetFor() {
+        Ch7_4.removeTargetFor(this.input, "doesn't exist");
         assertThrows(ConcurrentModificationException.class, () -> Ch7_4.removeTargetFor(this.input, this.target));
     }
 
