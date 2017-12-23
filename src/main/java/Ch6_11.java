@@ -6,16 +6,8 @@ public class Ch6_11 {
     static class Pair<E extends Comparable<E>> {
         private E first, second;
 
-        public E getFirst() {
-            return first;
-        }
-
         public void setFirst(E first) {
             this.first = first;
-        }
-
-        public E getSecond() {
-            return second;
         }
 
         public void setSecond(E second) {
@@ -37,7 +29,7 @@ public class Ch6_11 {
         public static <E extends Comparable<E>> Pair<E> firstLast(ArrayList<? extends E> a) {
             Pair<E> p = new Pair<>();
             p.setFirst(a.get(0));
-            p.setSecond(a.get(a.size()-1));
+            p.setSecond(a.get(a.size() - 1));
             return p;
         }
 
