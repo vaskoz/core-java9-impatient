@@ -1,7 +1,9 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Ch6_1_Test {
 
@@ -27,8 +29,10 @@ public class Ch6_1_Test {
         Ch6_1 app = new Ch6_1();
         Ch6_1.Stack<String> stringStack = app.new Stack<>(1);
         stringStack.push("foo");
+        assertFalse(stringStack.isEmpty());
         String result = stringStack.pop();
         assertEquals("foo", result);
+        assertTrue(stringStack.isEmpty());
     }
 
     @Test
@@ -39,8 +43,10 @@ public class Ch6_1_Test {
         for (String s : data) {
             stringStack.push(s);
         }
+        assertFalse(stringStack.isEmpty());
         for (int i = 2; i >= 0; i--) {
             assertEquals(data[i], stringStack.pop());
         }
+        assertTrue(stringStack.isEmpty());
     }
 }
