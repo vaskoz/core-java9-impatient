@@ -39,10 +39,10 @@ public class Ch7_1_Test {
         assertEquals(primes.subList(0, 5), Ch7_1.sieveOfErathostenesBitSet(12));
         assertEquals(primes.subList(0, 9), Ch7_1.sieveOfErathostenesBitSet(25));
         assertEquals(primes.subList(0, 25), Ch7_1.sieveOfErathostenesBitSet(100));
-        assertEquals(primes, Ch7_1.sieveOfErathostenes(350));
+        assertEquals(primes, Ch7_1.sieveOfErathostenesBitSet(350));
 
         assertThrows(IllegalArgumentException.class, () -> {
-            Ch7_1.sieveOfErathostenes(1);
+            Ch7_1.sieveOfErathostenesBitSet(1);
         });
     }
 }
