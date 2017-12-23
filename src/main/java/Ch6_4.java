@@ -57,10 +57,6 @@ public class Ch6_4 {
                 return key;
             }
 
-            public void setKey(K key) {
-                this.key = key;
-            }
-
             public V getValue() {
                 return value;
             }
