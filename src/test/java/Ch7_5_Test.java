@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Ch7_5_Test {
     private static List<String> expected = List.of("a", "b", "c", "d", "e");
@@ -24,5 +25,13 @@ public class Ch7_5_Test {
         this.input = new LinkedList<>(this.input);
         Ch7_5.swap(this.input, i, j);
         assertEquals(expected, this.input);
+    }
+
+    @Test
+    public void outOfRangeSwap() {
+        assertThrows(IllegalArgumentException.class,
+                () -> Ch7_5.swap(new ArrayList<>(this.input), 0, this.input.size()));
+        assertThrows(IllegalArgumentException.class,
+                () -> Ch7_5.swap(new LinkedList<>(this.input), 0, this.input.size()));
     }
 }
