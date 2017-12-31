@@ -39,11 +39,10 @@ public class Ch7_1 {
             }
         }
         List<Integer> result = new ArrayList<>(numbers.cardinality());
-        for (int i = numbers.nextSetBit(0); i >= 0; i = numbers.nextSetBit(i + 1)) {
+        int i = numbers.nextSetBit(0);
+        while (i + 1 > 0) {
             result.add(i);
-            if (i == Integer.MAX_VALUE) {
-                break; // or (i+1) would overflow
-            }
+            i = numbers.nextSetBit(i + 1);
         }
         return result;
     }
