@@ -1,15 +1,11 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
 public class Ch6_21 {
     public static class Arrays {
         @SafeVarargs
         public static <T> T[] construct(int size, T... emptyValue) {
-            List<T> x = new ArrayList<>(size);
-            for (int i = 0; i < size; i++) {
-                x.add(null);
-            }
-            return x.toArray(emptyValue);
+            return new ArrayList<>(Collections.nCopies(size, null)).toArray(emptyValue);
         }
     }
 }
