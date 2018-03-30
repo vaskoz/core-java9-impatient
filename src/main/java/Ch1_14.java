@@ -12,13 +12,13 @@ public class Ch1_14 {
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        List<Integer> data = new ArrayList<>();
-        int dim = 0;
-        for (String line = in.nextLine(); !line.isEmpty(); line = in.nextLine()) {
+        var in = new Scanner(System.in);
+        var data = new ArrayList<Integer>();
+        var dim = 0;
+        for (var line = in.nextLine(); !line.isEmpty(); line = in.nextLine()) {
             String[] parts = line.split(" ");
             dim = parts.length;
-            for (String part : parts) {
+            for (var part : parts) {
                 data.add(Integer.valueOf(part));
             }
         }
@@ -27,31 +27,32 @@ public class Ch1_14 {
     }
 
     public boolean isMagic() {
-        int sum = 0;
-        for (int i = 0; i < this.dim; i++) {
+        var sum = 0;
+        for (var i = 0; i < this.dim; i++) {
             sum += this.data.get(i);
         }
         // Check diagonals
-        int diaglrSum = 0, diagrlSum = 0;
-        for (int row = 0; row < this.data.size() / this.dim; row++) {
+        var diaglrSum = 0;
+        var diagrlSum = 0;
+        for (var row = 0; row < this.data.size() / this.dim; row++) {
             // Check rows
-            int rowSum = 0;
-            for (int col = row * this.dim; col < (row + 1) * this.dim; col++) {
+            var rowSum = 0;
+            for (var col = row * this.dim; col < (row + 1) * this.dim; col++) {
                 rowSum += this.data.get(col);
             }
             if (rowSum != sum) {
                 return false;
             }
             // Check columns
-            int colSum = 0;
-            for (int col = row; col < this.data.size(); col = col + this.dim) {
+            var colSum = 0;
+            for (var col = row; col < this.data.size(); col = col + this.dim) {
                 colSum += this.data.get(col);
             }
             if (colSum != sum) {
                 return false;
             }
-            diaglrSum += this.data.get(row*this.dim+row);
-            diagrlSum += this.data.get((this.dim-row-1)*this.dim+(this.dim-row-1));
+            diaglrSum += this.data.get(row * this.dim + row);
+            diagrlSum += this.data.get((this.dim - row - 1) * this.dim + (this.dim - row - 1));
         }
         return diaglrSum == sum && diagrlSum == sum;
     }

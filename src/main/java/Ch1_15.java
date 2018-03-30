@@ -9,19 +9,19 @@ public class Ch1_15 {
     }
 
     public ArrayList<ArrayList<Integer>> pascalsTriangle() {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>(this.n);
-        for (int row = 0; row <= this.n; row++) {
-            ArrayList<Integer> nextRow = new ArrayList<>(row+1);
+        var result = new ArrayList<ArrayList<Integer>>(this.n);
+        for (var row = 0; row <= this.n; row++) {
+            var nextRow = new ArrayList<Integer>(row + 1);
             if (row == 0) {
                 nextRow.add(1);
             } else if (row == 1) {
                 nextRow.add(1);
                 nextRow.add(1);
             } else {
-                ArrayList<Integer> prev = result.get(row-1);
+                var prev = result.get(row - 1);
                 nextRow.add(1);
-                for (int pos = 1; pos < row; pos++) {
-                    nextRow.add(prev.get(pos-1)+prev.get(pos));
+                for (var pos = 1; pos < row; pos++) {
+                    nextRow.add(prev.get(pos - 1) + prev.get(pos));
                 }
                 nextRow.add(1);
             }
@@ -31,12 +31,12 @@ public class Ch1_15 {
     }
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        Ch1_15 prob = new Ch1_15(n);
-        ArrayList<ArrayList<Integer>> triangle = prob.pascalsTriangle();
-        for (ArrayList<Integer> list : triangle) {
-            for (Integer i : list) {
+        var in = new Scanner(System.in);
+        var n = in.nextInt();
+        var prob = new Ch1_15(n);
+        var triangle = prob.pascalsTriangle();
+        for (var list : triangle) {
+            for (var i : list) {
                 System.out.printf("%d ", i);
             }
             System.out.println();
