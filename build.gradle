@@ -27,7 +27,7 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.9
+sourceCompatibility = 1.10
 //targetCompatibility = 1.9 // defaults to 'sourceCompatibility'
 
 // In this section you declare the dependencies for your production and test code
