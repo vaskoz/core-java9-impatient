@@ -27,7 +27,7 @@ public class Ch1_3_Test {
 
     @BeforeEach
     void setupInput() {
-        InputStream in = new ByteArrayInputStream("4 8 10".getBytes());
+        var in = new ByteArrayInputStream("4 8 10".getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setIn(in);
         System.setOut(new PrintStream(this.out));

@@ -43,7 +43,7 @@ public class Ch1_14_Test {
 
     @Test
     void check() {
-        InputStream in = new ByteArrayInputStream(magicInput.getBytes());
+        var in = new ByteArrayInputStream(magicInput.getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setOut(new PrintStream(this.out));
         System.setIn(in);
@@ -53,7 +53,7 @@ public class Ch1_14_Test {
 
     @Test
     void checkNotMagicRow() {
-        InputStream in = new ByteArrayInputStream(notMagicRow.getBytes());
+        var in = new ByteArrayInputStream(notMagicRow.getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setOut(new PrintStream(this.out));
         System.setIn(in);
@@ -63,7 +63,7 @@ public class Ch1_14_Test {
 
     @Test
     void checkNotMagicColumn() {
-        InputStream in = new ByteArrayInputStream(notMagicColumn.getBytes());
+        var in = new ByteArrayInputStream(notMagicColumn.getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setOut(new PrintStream(this.out));
         System.setIn(in);

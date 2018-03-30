@@ -35,10 +35,10 @@ public class Ch1_10_Test {
     @Test
     void check() {
         Ch1_10.main(null);
-        String result = this.out.toString();
-        String[] parts = result.split(" ");
-        long v1 = Long.parseLong(parts[0]);
-        long v2 = Long.parseLong(parts[1].trim(), 36);
+        var result = this.out.toString();
+        var parts = result.split(" ");
+        var v1 = Long.parseLong(parts[0]);
+        var v2 = Long.parseLong(parts[1].trim(), 36);
         assertEquals(v1, v2);
     }
 }

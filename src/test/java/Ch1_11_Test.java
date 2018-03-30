@@ -33,7 +33,7 @@ public class Ch1_11_Test {
 
     @BeforeEach
     void setupInput() {
-        InputStream in = new ByteArrayInputStream(input.getBytes());
+        var in = new ByteArrayInputStream(input.getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setOut(new PrintStream(this.out));
         System.setIn(in);

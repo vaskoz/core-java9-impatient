@@ -37,7 +37,7 @@ public class Ch1_15_Test {
 
     @BeforeEach
     void setupInput() {
-        InputStream in = new ByteArrayInputStream(input.getBytes());
+        var in = new ByteArrayInputStream(input.getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setOut(new PrintStream(this.out));
         System.setIn(in);
@@ -51,10 +51,10 @@ public class Ch1_15_Test {
 
     @Test
     void direct() {
-        Ch1_15 prob = new Ch1_15(5);
-        ArrayList<ArrayList<Integer>> result = prob.pascalsTriangle();
+        var prob = new Ch1_15(5);
+        var result = prob.pascalsTriangle();
         assertEquals(6, result.size());
-        int[][] answer = {
+        var answer = new int[][]{
                 {1},
                 {1, 1},
                 {1, 2, 1},
@@ -62,9 +62,9 @@ public class Ch1_15_Test {
                 {1, 4, 6, 4, 1},
                 {1, 5, 10, 10, 5, 1},
         };
-        for (int i = 0; i < answer.length; i++) {
-            for (int j = 0; j < answer[i].length; j++) {
-                assertEquals(answer[i][j], (int)result.get(i).get(j));
+        for (var i = 0; i < answer.length; i++) {
+            for (var j = 0; j < answer[i].length; j++) {
+                assertEquals(answer[i][j], (int) result.get(i).get(j));
             }
         }
     }
