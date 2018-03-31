@@ -14,6 +14,7 @@ public class Ch2_6 {
 
         /**
          * Translate the position of this point.
+         *
          * @param x
          * @param y
          * @return mutates the existing Point
@@ -26,6 +27,7 @@ public class Ch2_6 {
 
         /**
          * Scale the position of this point.
+         *
          * @param scale
          * @return mutates the existing Point
          */

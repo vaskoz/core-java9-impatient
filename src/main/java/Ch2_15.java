@@ -10,7 +10,7 @@ public class Ch2_15 {
         }
 
         public void print(PrintStream printer) {
-            for (Item item : items) {
+            for (var item : items) {
                 printer.println(item);
             }
         }
@@ -25,7 +25,7 @@ public class Ch2_15 {
                 this.quantity = quantity;
                 this.unitPrice = unitPrice;
             }
-            
+
             @Override
             public String toString() {
                 return "Item{" +

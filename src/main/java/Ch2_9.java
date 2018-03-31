@@ -22,9 +22,9 @@ public class Ch2_9 {
         }
 
         public void drive(double miles) {
-            double gallonsNeeded = miles / this.mpg;
+            var gallonsNeeded = miles / this.mpg;
             if (gallonsNeeded > this.gallons) {
-                String msg = String.format("Insufficient fuel for this journey. " + "" +
+                var msg = String.format("Insufficient fuel for this journey. " + "" +
                         "To drive %f miles you need %f gallons, but only have %f gallons", miles, gallonsNeeded, this.gallons);
                 throw new IllegalArgumentException(msg);
             }
