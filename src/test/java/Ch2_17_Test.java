@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Ch2_17_Test {
     @Test
     public void testQueueIterator() {
-        Ch2_17.Queue q = new Ch2_17.Queue();
+        var q = new Ch2_17.Queue();
         q.add("a");
         q.add("b");
         q.add("c");
         q.add("hi");
         q.add("bye");
         q.add("there");
-        Iterator<String> iter = q.iterator();
+        var iter = q.iterator();
         assertTrue(iter.hasNext());
         assertEquals("a", iter.next());
         assertTrue(iter.hasNext());
