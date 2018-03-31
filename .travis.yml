@@ -1,4 +1,11 @@
+sudo: false
+dist: trusty
 language: java
-jdk:
-  - oraclejdk10
-
+install:
+  - mkdir -p ${HOME}
+  - cd ${HOME}
+  - wget https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz
+  - tar -xzf openjdk-10_linux-x64_bin.tar.gz
+  - export JAVA_HOME=${HOME}/jdk-10
+  - export PATH=${JAVA_HOME}/bin:${PATH}
+  - java -version
