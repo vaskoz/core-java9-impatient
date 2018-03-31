@@ -9,5 +9,6 @@ install:
   - export JAVA_HOME=${HOME}/jdk-10
   - export PATH=${JAVA_HOME}/bin:${PATH}
   - java -version
+  - cd -
 script:
   - ./gradlew clean check
