@@ -33,17 +33,17 @@ public class Ch5_5_Test {
 
     @Test
     public void testCopyLowercase() throws IOException {
-        File src = File.createTempFile("inputStrings", "data");
-        File dest = File.createTempFile("outputStrings", "data");
-        List<String> input = List.of("HI", "There", "EveryBody");
-        FileWriter fw = new FileWriter(src);
-        for (String s : input) {
+        var src = File.createTempFile("inputStrings", "data");
+        var dest = File.createTempFile("outputStrings", "data");
+        var input = List.of("HI", "There", "EveryBody");
+        var fw = new FileWriter(src);
+        for (var s : input) {
             fw.write(s + " ");
         }
         fw.close();
         Ch5_5.copyLowerCase(src, dest);
-        Scanner output = new Scanner(dest);
-        for (String s : input) {
+        var output = new Scanner(dest);
+        for (var s : input) {
             assertEquals(s.toLowerCase(), output.next());
         }
         assertFalse(output.hasNext());

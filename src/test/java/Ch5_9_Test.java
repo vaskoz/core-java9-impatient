@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Ch5_9_Test {
     @Test
     public void testLock() {
-        Ch5_9.AutoCloseableReentrantLock lock = Ch5_9.lock();
+        var lock = Ch5_9.lock();
         try (lock) {
             assertTrue(lock.isLocked());
         } finally {
