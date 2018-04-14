@@ -17,7 +17,7 @@ public class Ch6_14_Test {
 
     @Test
     public void testCloseAllOneException() {
-        Exception myException = new Exception("I can't close");
+        var myException = new Exception("I can't close");
         List<AutoCloseable> elems = List.of(() -> {
         }, () -> {
         }, () -> {
@@ -31,9 +31,9 @@ public class Ch6_14_Test {
 
     @Test
     public void testCloseAllExceptions() {
-        Exception third = new Exception("I can't close third");
-        Exception second = new Exception("I can't close second");
-        Exception first = new Exception("I can't close first");
+        var third = new Exception("I can't close third");
+        var second = new Exception("I can't close second");
+        var first = new Exception("I can't close first");
         List<AutoCloseable> elems = List.of(() -> {
             throw first;
         }, () -> {

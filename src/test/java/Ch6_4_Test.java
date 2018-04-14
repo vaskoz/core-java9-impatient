@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class Ch6_4_Test {
     @Test
     public void testTable() {
-        Ch6_4 app = new Ch6_4();
-        Ch6_4.Table<String, Integer> table = app.new Table<>();
+        var app = new Ch6_4();
+        var table = app.new Table<String, Integer>();
         table.set("foo", 1);
         table.set("bar", 2);
         table.set("baz", 3);

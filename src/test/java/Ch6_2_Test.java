@@ -9,24 +9,24 @@ public class Ch6_2_Test {
 
     @Test
     public void testBadStackEASize() {
-        Ch6_2 app = new Ch6_2();
+        var app = new Ch6_2();
         assertThrows(IllegalArgumentException.class, () -> {
-            Ch6_2.StackEA<String> stringStack = app.new StackEA<>(0);
+            app.new StackEA<String>(0);
         });
     }
 
     @Test
     public void testBadStackOASize() {
-        Ch6_2 app = new Ch6_2();
+        var app = new Ch6_2();
         assertThrows(IllegalArgumentException.class, () -> {
-            Ch6_2.StackOA<String> stringStack = app.new StackOA<>(0);
+            app.new StackOA<>(0);
         });
     }
 
     @Test
     public void testPopEmptyStackEA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackEA<String> stringStack = app.new StackEA<>(1);
+        var app = new Ch6_2();
+        var stringStack = app.new StackEA<String>(1);
         assertTrue(stringStack.isEmpty());
         assertThrows(IllegalStateException.class, () -> {
             stringStack.pop();
@@ -35,8 +35,8 @@ public class Ch6_2_Test {
 
     @Test
     public void testPopEmptyStackOA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackOA<String> stringStack = app.new StackOA<>(1);
+        var app = new Ch6_2();
+        var stringStack = app.new StackOA<String>(1);
         assertTrue(stringStack.isEmpty());
         assertThrows(IllegalStateException.class, () -> {
             stringStack.pop();
@@ -45,8 +45,8 @@ public class Ch6_2_Test {
 
     @Test
     public void testPushPopStackEA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackEA<String> stringStack = app.new StackEA<>(1);
+        var app = new Ch6_2();
+        var stringStack = app.new StackEA<String>(1);
         assertTrue(stringStack.isEmpty());
         stringStack.push("foo");
         assertFalse(stringStack.isEmpty());
@@ -57,8 +57,8 @@ public class Ch6_2_Test {
 
     @Test
     public void testPushPopStackOA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackOA<String> stringStack = app.new StackOA<>(1);
+        var app = new Ch6_2();
+        var stringStack = app.new StackOA<String>(1);
         assertTrue(stringStack.isEmpty());
         stringStack.push("foo");
         assertFalse(stringStack.isEmpty());
@@ -69,15 +69,15 @@ public class Ch6_2_Test {
 
     @Test
     public void testStackEA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackEA<String> stringStack = app.new StackEA<>(3);
+        var app = new Ch6_2();
+        var stringStack = app.new StackEA<String>(3);
         assertTrue(stringStack.isEmpty());
-        String[] data = {"abc", "def", "ghi", "jkl"};
-        for (String s : data) {
+        var data = new String[]{"abc", "def", "ghi", "jkl"};
+        for (var s : data) {
             stringStack.push(s);
         }
         assertFalse(stringStack.isEmpty());
-        for (int i = 3; i >= 0; i--) {
+        for (var i = 3; i >= 0; i--) {
             assertEquals(data[i], stringStack.pop());
         }
         assertTrue(stringStack.isEmpty());
@@ -85,15 +85,15 @@ public class Ch6_2_Test {
 
     @Test
     public void testStackOA() {
-        Ch6_2 app = new Ch6_2();
-        Ch6_2.StackOA<String> stringStack = app.new StackOA<>(3);
+        var app = new Ch6_2();
+        var stringStack = app.new StackOA<String>(3);
         assertTrue(stringStack.isEmpty());
-        String[] data = {"abc", "def", "ghi", "jkl"};
-        for (String s : data) {
+        var data = new String[]{"abc", "def", "ghi", "jkl"};
+        for (var s : data) {
             stringStack.push(s);
         }
         assertFalse(stringStack.isEmpty());
-        for (int i = 3; i >= 0; i--) {
+        for (var i = 3; i >= 0; i--) {
             assertEquals(data[i], stringStack.pop());
         }
         assertTrue(stringStack.isEmpty());
