@@ -6,14 +6,16 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class Ch3_11_Test {
     private static Path tempDir;
-    private static Stack<File> dirs = new Stack<>();
+    private static Deque<File> dirs = new ArrayDeque<>();
 
     @BeforeAll
     public static void setup() {
@@ -34,7 +36,7 @@ public class Ch3_11_Test {
 
     @AfterAll
     public static void teardown() {
-        while (!dirs.empty()) {
+        while (!dirs.isEmpty()) {
             var f = dirs.pop();
             assertTrue(f.delete());
         }
