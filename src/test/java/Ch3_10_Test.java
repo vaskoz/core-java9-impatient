@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Ch3_10_Test {
     @Test
     public void testRunTogether() throws InterruptedException {
-        AtomicInteger ai = new AtomicInteger(0);
+        var ai = new AtomicInteger(0);
         Ch3_10.runTogether(
                 () -> ai.addAndGet(2),
                 () -> ai.addAndGet(3),
@@ -19,7 +19,7 @@ public class Ch3_10_Test {
 
     @Test
     public void testRunInOrder() {
-        AtomicInteger ai = new AtomicInteger(0);
+        var ai = new AtomicInteger(0);
         Ch3_10.runInOrder(
                 () -> ai.addAndGet(2),
                 () -> ai.addAndGet(3),

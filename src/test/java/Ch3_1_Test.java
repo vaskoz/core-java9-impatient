@@ -11,8 +11,8 @@ public class Ch3_1_Test {
             "'10.0,20.0,30.0', 20.0",
             "'1.0,1.0,1.0,3.0,3.0,3.0', 2.0"})
     public void testEmployeeAverageSalary(String data, double average) {
-        Ch3_1.Measurable[] input = Arrays.stream(data.split(","))
-                .map(s->new Ch3_1.Employee(Double.parseDouble(s)))
+        var input = Arrays.stream(data.split(","))
+                .map(s -> new Ch3_1.Employee(Double.parseDouble(s)))
                 .toArray(Ch3_1.Measurable[]::new);
         assertEquals(average, Ch3_1.Employee.average(input), 0.0001);
     }

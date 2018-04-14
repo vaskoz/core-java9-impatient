@@ -31,7 +31,7 @@ public class Ch3_12_Test {
 
     @AfterAll
     public static void teardown() {
-        for (File f : createdFiles) {
+        for (var f : createdFiles) {
             try {
                 Files.deleteIfExists(f.toPath());
             } catch (IOException e) {
@@ -42,8 +42,8 @@ public class Ch3_12_Test {
 
     @Test
     public void findFilesByExtension() {
-        String tmpDir = createdFiles[0].getParent();
-        List<String> results = Ch3_12.findByExtension(tmpDir, ".foobar");
+        var tmpDir = createdFiles[0].getParent();
+        var results = Ch3_12.findByExtension(tmpDir, ".foobar");
         Collections.sort(results);
         assertEquals(expected, results);
     }
