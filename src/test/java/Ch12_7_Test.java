@@ -31,9 +31,9 @@ public class Ch12_7_Test {
 
     @Test
     public void testOverlap() {
-        Ch12_7 app = new Ch12_7();
-        Ch12_7.TimeInterval ti = app.new TimeInterval(dateTimes.get(0), dateTimes.get(2));
-        Ch12_7.TimeInterval other = app.new TimeInterval(dateTimes.get(1), dateTimes.get(2));
+        var app = new Ch12_7();
+        var ti = app.new TimeInterval(dateTimes.get(0), dateTimes.get(2));
+        var other = app.new TimeInterval(dateTimes.get(1), dateTimes.get(2));
         assertTrue(ti.overlap(other));
         ti = app.new TimeInterval(dateTimes.get(1), dateTimes.get(1));
         other = app.new TimeInterval(dateTimes.get(0), dateTimes.get(2));
@@ -51,7 +51,7 @@ public class Ch12_7_Test {
 
     @Test
     public void testBadArguments() {
-        Ch12_7 app = new Ch12_7();
+        var app = new Ch12_7();
         assertThrows(IllegalArgumentException.class, () ->
                 app.new TimeInterval(
                         LocalDateTime.of(2018, 1, 1, 1, 1),
