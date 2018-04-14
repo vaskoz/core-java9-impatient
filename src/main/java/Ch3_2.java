@@ -27,7 +27,7 @@ public class Ch3_2 {
         }
 
         static double average(Measurable[] objects) {
-            OptionalDouble result = Arrays.asList(objects).parallelStream().mapToDouble((o)->o.getMeasure()).average();
+            var result = Arrays.asList(objects).parallelStream().mapToDouble((o) -> o.getMeasure()).average();
             return result.getAsDouble();
         }
 

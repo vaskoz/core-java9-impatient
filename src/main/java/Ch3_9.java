@@ -7,8 +7,8 @@ public class Ch3_9 {
     private final ReentrantLock lock = new ReentrantLock();
 
     public static void main(String... args) throws Exception {
-        Ch3_9 app = new Ch3_9();
-        ExecutorService es = Executors.newFixedThreadPool(2);
+        var app = new Ch3_9();
+        var es = Executors.newFixedThreadPool(2);
         es.submit(app.new Greeter(10, "tom"));
         es.submit(app.new Greeter(5, "tim"));
         es.awaitTermination(500, TimeUnit.MILLISECONDS);
@@ -25,7 +25,7 @@ public class Ch3_9 {
 
         @Override
         public void run() {
-            for (int i = 0; i < this.n; i++) {
+            for (var i = 0; i < this.n; i++) {
                 Ch3_9.this.lock.lock();
                 System.out.println("Hello, " + this.target);
                 Ch3_9.this.lock.unlock();
