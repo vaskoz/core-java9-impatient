@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Ch4_6_Test {
     @Test
     public void testItemSymmetry() {
-        Ch4_6.Item item = new Ch4_6.Item("abc", 10.0);
-        Ch4_6.Item item2 = new Ch4_6.Item("abc", 10.0);
-        Ch4_6.Item item3 = new Ch4_6.Item("abc", 10.1);
+        var item = new Ch4_6.Item("abc", 10.0);
+        var item2 = new Ch4_6.Item("abc", 10.0);
+        var item3 = new Ch4_6.Item("abc", 10.1);
         assertTrue(item.equals(item2));
         assertTrue(item2.equals(item));
         assertFalse(item.equals(item3));
@@ -18,9 +18,9 @@ public class Ch4_6_Test {
 
     @Test
     public void testDiscountedItemSymmetry() {
-        Ch4_6.DiscountedItem item = new Ch4_6.DiscountedItem("abc", 10.0, 2.0);
-        Ch4_6.Item item2 = new Ch4_6.Item("abc", 10.0);
-        Ch4_6.DiscountedItem item3 = new Ch4_6.DiscountedItem("abc", 10.0, 3.0);
+        var item = new Ch4_6.DiscountedItem("abc", 10.0, 2.0);
+        var item2 = new Ch4_6.Item("abc", 10.0);
+        var item3 = new Ch4_6.DiscountedItem("abc", 10.0, 3.0);
         assertTrue(item.equals(item2));
         assertTrue(item2.equals(item3));
         assertFalse(item.equals(item3)); // breaks symmetry
