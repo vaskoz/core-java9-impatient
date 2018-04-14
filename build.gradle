@@ -31,9 +31,10 @@ sourceCompatibility = 1.10
 //targetCompatibility = 1.9 // defaults to 'sourceCompatibility'
 
 // In this section you declare the dependencies for your production and test code
+def junitVersion = "5.1.1"
 dependencies {
     // JUnit Jupiter API and TestEngine implementation
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.1.0")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.1.0")
-    testCompile("org.junit.jupiter:junit-jupiter-params:5.1.0")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
 }
