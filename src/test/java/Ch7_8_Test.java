@@ -31,19 +31,19 @@ public class Ch7_8_Test {
         assertThrows(IllegalArgumentException.class, () -> Ch7_8.main());
         assertThrows(FileNotFoundException.class, () -> Ch7_8.main("i'm not a real file"));
 
-        File f = File.createTempFile("words", "txt");
-        BufferedWriter fw = new BufferedWriter(new FileWriter(f));
-        String[] text = {"hi there buddy", "buddy eats pizza", "hi buddy you like pizza", "no pizza for me"};
-        for (String line : text) {
+        var f = File.createTempFile("words", "txt");
+        var fw = new BufferedWriter(new FileWriter(f));
+        var text = new String[]{"hi there buddy", "buddy eats pizza", "hi buddy you like pizza", "no pizza for me"};
+        for (var line : text) {
             fw.write(line);
             fw.newLine();
         }
         fw.flush();
-        ByteArrayOutputStream out = new ByteArrayOutputStream(5000);
+        var out = new ByteArrayOutputStream(5000);
         System.setOut(new PrintStream(out));
         Ch7_8.main(f.getAbsolutePath());
 
-        String want = "Word is: hi with lines: 1,3\n" +
+        var want = "Word is: hi with lines: 1,3\n" +
                 "Word is: no with lines: 4\n" +
                 "Word is: pizza with lines: 2,3,4\n" +
                 "Word is: eats with lines: 2\n" +

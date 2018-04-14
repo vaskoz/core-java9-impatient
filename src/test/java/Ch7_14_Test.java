@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Ch7_14_Test {
     @Test
     public void testImmutableListView() {
-        int n = 100;
-        Iterator<Integer> integerIterator = Ch7_14.immutableListView(n);
-        for (int i = 0; i <= n; i++) {
+        var n = 100;
+        var integerIterator = Ch7_14.immutableListView(n);
+        for (var i = 0; i <= n; i++) {
             assertTrue(integerIterator.hasNext());
             assertEquals(i, (int) integerIterator.next());
         }

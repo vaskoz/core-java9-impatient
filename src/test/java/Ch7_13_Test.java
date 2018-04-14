@@ -13,8 +13,8 @@ public class Ch7_13_Test {
     @Test
     public void testCache() {
         assertEquals(this.strings.size(), this.ints.size());
-        Ch7_13.Cache<String, Integer> cache = new Ch7_13.Cache<>(5);
-        for (int i = 0; i < this.strings.size(); i++) {
+        var cache = new Ch7_13.Cache<String, Integer>(5);
+        for (var i = 0; i < this.strings.size(); i++) {
             cache.put(strings.get(i), ints.get(i));
         }
         assertEquals(this.expected.entrySet(), cache.entrySet());
