@@ -1,11 +1,9 @@
-import java.lang.reflect.Field;
-
 public class Ch4_9 {
     static class UniversalToString {
         public static String toString(Object obj) {
-            StringBuilder sb = new StringBuilder();
-            Class clazz = obj.getClass();
-            for (Field f : clazz.getDeclaredFields()) {
+            var sb = new StringBuilder();
+            var clazz = obj.getClass();
+            for (var f : clazz.getDeclaredFields()) {
                 sb.append(f.getName());
                 sb.append(":");
                 try {

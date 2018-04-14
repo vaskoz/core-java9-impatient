@@ -13,8 +13,8 @@ public class Ch4_13 {
             throw new IllegalArgumentException("Method must be of form AnyType SomeMethod(OneDouble)");
         }
         out.println(method.getDeclaringClass().getCanonicalName() + "." + method.getName());
-        for (double value = lower; value <= upper; value += step) {
-            Object result = method.invoke(method.getDeclaringClass(), value);
+        for (var value = lower; value <= upper; value += step) {
+            var result = method.invoke(method.getDeclaringClass(), value);
             out.println("Value: " + value + " returns: " + result);
         }
     }
