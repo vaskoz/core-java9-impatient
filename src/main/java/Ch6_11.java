@@ -27,7 +27,7 @@ public class Ch6_11 {
     // Question 6.9
     static class Arrays {
         public static <E extends Comparable<E>> Pair<E> firstLast(ArrayList<? extends E> a) {
-            Pair<E> p = new Pair<>();
+            var p = new Pair<E>();
             p.setFirst(a.get(0));
             p.setSecond(a.get(a.size() - 1));
             return p;
@@ -44,7 +44,7 @@ public class Ch6_11 {
 
         // Question 6.11
         public static <E extends Comparable<E>> Pair<E> minMax(ArrayList<E> a) {
-            Pair<E> p = new Pair<>();
+            var p = new Pair<E>();
             p.setFirst(min(a));
             p.setSecond(max(a));
             return p;

@@ -6,24 +6,24 @@ import java.util.StringJoiner;
 
 public class Ch6_25 {
     public static String genericDeclaration(Method m) {
-        StringBuilder sb = new StringBuilder();
-        int modifiers = m.getModifiers();
+        var sb = new StringBuilder();
+        var modifiers = m.getModifiers();
         sb.append(Modifier.toString(modifiers));
-        TypeVariable<Method>[] types = m.getTypeParameters();
-        StringJoiner sj = new StringJoiner(",");
+        var types = m.getTypeParameters();
+        var sj = new StringJoiner(",");
         sb.append(" <");
-        for (TypeVariable<Method> t : types) {
+        for (var t : types) {
             sj.add(t.getName());
         }
         sb.append(sj.toString());
         sb.append("> ");
-        Type returnType = m.getGenericReturnType();
+        var returnType = m.getGenericReturnType();
         sb.append(returnType.getTypeName()).append(" ");
         sb.append(m.getName());
         sb.append("(");
         sj = new StringJoiner(", ");
-        Type[] paramTypes = m.getGenericParameterTypes();
-        for (Type t : paramTypes) {
+        var paramTypes = m.getGenericParameterTypes();
+        for (var t : paramTypes) {
             sj.add(t.getTypeName());
         }
         sb.append(sj.toString());
