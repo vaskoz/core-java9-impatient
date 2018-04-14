@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.LongAdder;
 public class Ch10_9_Test {
     @Test
     public void testAtomicLong() {
-        AtomicLong atomicLong = new AtomicLong();
-        List<Thread> threads = new ArrayList<>(1000);
-        for (int i = 0; i < 1000; i++) {
+        var atomicLong = new AtomicLong();
+        var threads = new ArrayList<Thread>(1000);
+        for (var i = 0; i < 1000; i++) {
             threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -21,7 +21,7 @@ public class Ch10_9_Test {
             }));
             threads.get(i).start();
         }
-        for (Thread t : threads) {
+        for (var t : threads) {
             try {
                 t.join();
             } catch (InterruptedException e) {
@@ -32,9 +32,9 @@ public class Ch10_9_Test {
 
     @Test
     public void testLongAddr() {
-        LongAdder longAdder = new LongAdder();
-        List<Thread> threads = new ArrayList<>(1000);
-        for (int i = 0; i < 1000; i++) {
+        var longAdder = new LongAdder();
+        var threads = new ArrayList<Thread>(1000);
+        for (var i = 0; i < 1000; i++) {
             threads.add(new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -45,7 +45,7 @@ public class Ch10_9_Test {
             }));
             threads.get(i).start();
         }
-        for (Thread t : threads) {
+        for (var t : threads) {
             try {
                 t.join();
             } catch (InterruptedException e) {
