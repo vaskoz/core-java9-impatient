@@ -21,16 +21,16 @@ public class Ch4_10_Test {
 
     @Test
     public void testMembersOfIntArray() {
-        Class clazz = int[].class;
-        ByteArrayOutputStream out = new ByteArrayOutputStream(5000);
+        var clazz = int[].class;
+        var out = new ByteArrayOutputStream(5000);
         Ch4_10.printMembers(new PrintStream(out), clazz);
         assertEquals(expected, out.toString());
     }
 
     @Test
     public void testMembersOfObject() {
-        Class clazz = Object.class;
-        ByteArrayOutputStream out = new ByteArrayOutputStream(5000);
+        var clazz = Object.class;
+        var out = new ByteArrayOutputStream(5000);
         Ch4_10.printMembers(new PrintStream(out), clazz);
         assertEquals(expected, out.toString());
     }

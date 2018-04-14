@@ -11,7 +11,7 @@ public class Ch7_4 {
     }
 
     public static <E> void removeTargetIterator(List<E> list, E target) {
-        for (ListIterator<E> iterator = list.listIterator(); iterator.hasNext(); ) {
+        for (var iterator = list.listIterator(); iterator.hasNext(); ) {
             E e = iterator.next();
             if (e.equals(target)) {
                 iterator.remove();

@@ -39,7 +39,7 @@ public class Ch2_9_Test {
 
     @Test
     void driveFar() {
-        Ch2_9.Car c = new Ch2_9.Car(10, 1);
+        var c = new Ch2_9.Car(10, 1);
         c.drive(9);
         assertEquals(0.1, c.getFuelLevel(), 0.0001);
         assertEquals(9.0, c.getDistance(), 0.0001);
@@ -54,9 +54,9 @@ public class Ch2_9_Test {
 
     @Test
     void driveTooFar() {
-        Ch2_9.Car c = new Ch2_9.Car(10, 1);
+        var c = new Ch2_9.Car(10, 1);
         assertThrows(IllegalArgumentException.class, () -> {
-           c.drive(10.1);
+            c.drive(10.1);
         });
     }
 }

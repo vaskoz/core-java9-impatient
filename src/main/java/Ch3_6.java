@@ -2,7 +2,10 @@ import java.math.BigInteger;
 
 public class Ch3_6 {
     interface Sequence<T> {
-        default boolean hasNext() { return true; }
+        default boolean hasNext() {
+            return true;
+        }
+
         T next();
     }
 
@@ -11,7 +14,7 @@ public class Ch3_6 {
 
         @Override
         public BigInteger next() {
-            BigInteger v = new BigInteger(value.toString());
+            var v = new BigInteger(value.toString());
             value++;
             return v.multiply(v);
         }

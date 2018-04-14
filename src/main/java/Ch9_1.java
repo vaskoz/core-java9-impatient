@@ -7,7 +7,7 @@ public class Ch9_1 {
     public static void copyStream(OutputStream dest, InputStream src) {
         Objects.requireNonNull(src, "InputStream cannot be null");
         Objects.requireNonNull(dest, "OutputStream cannot be null");
-        try (InputStream in = src; OutputStream out = dest) {
+        try (var in = src; OutputStream out = dest) {
             in.transferTo(out);
         } catch (IOException e) {
             try {

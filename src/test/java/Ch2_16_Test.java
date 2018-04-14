@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class Ch2_16_Test {
     @Test
     public void testQueue() {
-        Ch2_16.Queue q = new Ch2_16.Queue();
+        var q = new Ch2_16.Queue();
         q.add("a");
         q.add("b");
         q.add("c");

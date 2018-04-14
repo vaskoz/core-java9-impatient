@@ -22,13 +22,13 @@ public class Ch5_4 {
     }
 
     public Status sumOfValues(String filename, List<Double> result) {
-        ArrayList<Double> doubles = new ArrayList<>();
-        Status statusCode = this.readValues(filename, doubles);
+        var doubles = new ArrayList<Double>();
+        var statusCode = this.readValues(filename, doubles);
         if (statusCode != Status.Success) {
             return statusCode;
         }
-        double sum = 0.0;
-        for (double d : doubles) {
+        var sum = 0.0;
+        for (var d : doubles) {
             sum += d;
         }
         result.add(sum);

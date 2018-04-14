@@ -24,11 +24,11 @@ public class Ch4_4_Test {
             "-1.0, -1.0, 0.1, 2.0, 2.0, 1.0, 1.0",
             "-5.0, 5.0, 5.0, 10.0, -10.0, 5.0, -5.0"})
     public void testCircle(double centerX, double centerY, double radius, double moveX, double moveY, double expectedX, double expectedY) {
-        Ch4_4.Point center = app.new Point(centerX, centerY);
-        Ch4_4.Circle circle = app.new Circle(center, radius);
+        var center = app.new Point(centerX, centerY);
+        var circle = app.new Circle(center, radius);
         circle.moveBy(moveX, moveY);
-        Ch4_4.Point newCenter = circle.getCenter();
-        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        var newCenter = circle.getCenter();
+        var expected = app.new Point(expectedX, expectedY);
         assertEquals(expected, newCenter);
         assertEquals(expected.hashCode(), newCenter.hashCode());
     }
@@ -37,11 +37,11 @@ public class Ch4_4_Test {
     @CsvSource({"0.0, 0.0, 4.0, 4.0, 2.0, 2.0, 4.0, 0.0",
             "-5.0, 5.0, 5.0, 10.0, 1.0, 1.0, -1.5, 1.0"})
     public void testRectangle(double topleftX, double topleftY, double width, double height, double moveX, double moveY, double expectedX, double expectedY) {
-        Ch4_4.Point topleft = app.new Point(topleftX, topleftY);
-        Ch4_4.Rectangle rectangle = app.new Rectangle(topleft, width, height);
+        var topleft = app.new Point(topleftX, topleftY);
+        var rectangle = app.new Rectangle(topleft, width, height);
         rectangle.moveBy(moveX, moveY);
-        Ch4_4.Point newCenter = rectangle.getCenter();
-        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        var newCenter = rectangle.getCenter();
+        var expected = app.new Point(expectedX, expectedY);
         assertEquals(expected, newCenter);
         assertEquals(expected.hashCode(), newCenter.hashCode());
     }
@@ -50,12 +50,12 @@ public class Ch4_4_Test {
     @CsvSource({"0.0, 0.0, 4.0, 0.0, 2.0, 0.0, 4.0, 0.0",
             "-1.0, -1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0"})
     public void testLine(double fromX, double fromY, double toX, double toY, double moveX, double moveY, double expectedX, double expectedY) {
-        Ch4_4.Point from = app.new Point(fromX, fromY);
-        Ch4_4.Point to = app.new Point(toX, toY);
-        Ch4_4.Line line = app.new Line(from, to);
+        var from = app.new Point(fromX, fromY);
+        var to = app.new Point(toX, toY);
+        var line = app.new Line(from, to);
         line.moveBy(moveX, moveY);
-        Ch4_4.Point newCenter = line.getCenter();
-        Ch4_4.Point expected = app.new Point(expectedX, expectedY);
+        var newCenter = line.getCenter();
+        var expected = app.new Point(expectedX, expectedY);
         assertEquals(expected, newCenter);
         assertEquals(expected.hashCode(), newCenter.hashCode());
     }

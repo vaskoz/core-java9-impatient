@@ -19,7 +19,7 @@ public class Ch4_6 {
             // Check that otherObject is an Item
             if (!(otherObject instanceof Item)) return false;
             // Test whether the instance variables have identical values
-            Item other = (Item) otherObject;
+            var other = (Item) otherObject;
             return Objects.equals(description, other.description) && price == other.price;
         }
 
@@ -44,7 +44,7 @@ public class Ch4_6 {
             if (otherObject.getClass() == Item.class) {
                 return super.equals(otherObject);
             }
-            DiscountedItem other = (DiscountedItem) otherObject;
+            var other = (DiscountedItem) otherObject;
             return this.discount == other.discount;
         }
 

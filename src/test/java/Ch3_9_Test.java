@@ -19,10 +19,10 @@ public class Ch3_9_Test {
     @Test
     public void testGreeterThreads() throws Exception {
         Ch3_9.main();
-        String output = this.out.toString();
-        String[] parts = output.split("\n");
-        long toms = Arrays.stream(parts).filter(s -> s.contains("tom")).count();
-        long tims = Arrays.stream(parts).filter(s -> s.contains("tim")).count();
+        var output = this.out.toString();
+        var parts = output.split("\n");
+        var toms = Arrays.stream(parts).filter(s -> s.contains("tom")).count();
+        var tims = Arrays.stream(parts).filter(s -> s.contains("tim")).count();
         assertEquals(10, toms);
         assertEquals(5, tims);
     }

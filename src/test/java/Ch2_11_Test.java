@@ -33,17 +33,17 @@ public class Ch2_11_Test {
 
     @Test
     void check() {
-        StringBuilder want = new StringBuilder();
-        LocalDate today = now();
-        LocalDate date = of(today.getYear(), today.getMonth(), 1);
+        var want = new StringBuilder();
+        var today = now();
+        var date = of(today.getYear(), today.getMonth(), 1);
         want.append(date.getMonth().toString()).append(" ").append(date.getYear()).append('\n');
         want.append("Su\tMo\tTu\tWe\tTh\tFr\tSa\t\n");
-        int pos = date.getDayOfWeek().getValue() == 7 ? 0 : date.getDayOfWeek().getValue();
-        for (int i = 0; i < pos; i++) {
+        var pos = date.getDayOfWeek().getValue() == 7 ? 0 : date.getDayOfWeek().getValue();
+        for (var i = 0; i < pos; i++) {
             want.append(" \t");
         }
         while (date.getMonthValue() == today.getMonthValue()) {
-            String format = pos++ % 7 == 6 ? "%d\n" : "%d\t";
+            var format = pos++ % 7 == 6 ? "%d\n" : "%d\t";
             want.append(String.format(format, date.getDayOfMonth()));
             date = date.plusDays(1);
         }

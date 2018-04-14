@@ -27,7 +27,7 @@ public class Ch1_2_Test {
 
     @BeforeEach
     void setupInput() {
-        InputStream in = new ByteArrayInputStream("-2".getBytes());
+        var in = new ByteArrayInputStream("-2".getBytes());
         this.out = new ByteArrayOutputStream(this.want.length() * 2);
         System.setIn(in);
         System.setOut(new PrintStream(this.out));

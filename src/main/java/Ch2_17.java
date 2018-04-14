@@ -4,7 +4,7 @@ public class Ch2_17 {
         private Node tail;
 
         public void add(String s) {
-            Node n = new Node(s);
+            var n = new Node(s);
             if (this.head == null) {
                 this.head = n;
                 this.tail = n;
@@ -18,7 +18,7 @@ public class Ch2_17 {
             if (this.head == null) {
                 return null;
             } else {
-                Node n = this.head;
+                var n = this.head;
                 this.head = this.head.next;
                 return n.getData();
             }
@@ -51,7 +51,7 @@ public class Ch2_17 {
 
             @Override
             public String next() {
-                String result = hasNext() ? current.getData() : null;
+                var result = hasNext() ? current.getData() : null;
                 this.current = hasNext() ? this.current.next : null;
                 return result;
             }

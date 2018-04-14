@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Ch3_15_Test {
     @Test
     public void testEmployeeReversedComparator() {
-        Ch3_15 app = new Ch3_15();
-        Ch3_15.Employee[] employees = new Ch3_15.Employee[5];
+        var app = new Ch3_15();
+        var employees = new Ch3_15.Employee[5];
         employees[0] = app.new Employee("joe", 50.0);
         employees[1] = app.new Employee("sam", 30.0);
         employees[2] = app.new Employee("jane", 50.0);
@@ -25,8 +25,8 @@ public class Ch3_15_Test {
 
     @Test
     public void testEmployeeComparator() {
-        Ch3_15 app = new Ch3_15();
-        Ch3_15.Employee[] employees = new Ch3_15.Employee[5];
+        var app = new Ch3_15();
+        var employees = new Ch3_15.Employee[5];
         employees[0] = app.new Employee("joe", 50.0);
         employees[1] = app.new Employee("sam", 30.0);
         employees[2] = app.new Employee("jane", 50.0);

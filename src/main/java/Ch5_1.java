@@ -8,8 +8,8 @@ public class Ch5_1 {
         if (filename == null || filename.isEmpty()) {
             throw new IllegalArgumentException("invalid filename");
         }
-        ArrayList<Double> result = new ArrayList<>();
-        Scanner in = new Scanner(new File(filename));
+        var result = new ArrayList<Double>();
+        var in = new Scanner(new File(filename));
         while (in.hasNextDouble()) {
             result.add(in.nextDouble());
         }

@@ -20,7 +20,7 @@ public class Ch4_2 {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
-            Point point = (Point) o;
+            var point = (Point) o;
 
             if (Double.compare(point.x, x) != 0) return false;
             return Double.compare(point.y, y) == 0;
@@ -28,10 +28,8 @@ public class Ch4_2 {
 
         @Override
         public int hashCode() {
-            int result;
-            long temp;
-            temp = Double.doubleToLongBits(x);
-            result = (int) (temp ^ (temp >>> 32));
+            var temp = Double.doubleToLongBits(x);
+            var result = (int) (temp ^ (temp >>> 32));
             temp = Double.doubleToLongBits(y);
             result = 31 * result + (int) (temp ^ (temp >>> 32));
             return result;
@@ -60,16 +58,15 @@ public class Ch4_2 {
             if (o == null || getClass() != o.getClass()) return false;
             if (!super.equals(o)) return false;
 
-            LabeledPoint that = (LabeledPoint) o;
+            var that = (LabeledPoint) o;
 
             return label.equals(that.label);
         }
 
         @Override
         public int hashCode() {
-            int result = super.hashCode();
-            result = 31 * result + label.hashCode();
-            return result;
+            var result = super.hashCode();
+            return 31 * result + label.hashCode();
         }
 
         @Override

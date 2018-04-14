@@ -51,15 +51,15 @@ public class Ch5_3_Test {
 
     @Test
     public void testMain() throws IOException {
-        File f = File.createTempFile("testReadValues", "data");
-        ArrayList<Double> expected = new ArrayList<>(Arrays.asList(2.1, 3.2, 4.3, 5.4));
-        FileWriter fw = new FileWriter(f);
-        for (Double d : expected) {
+        var f = File.createTempFile("testReadValues", "data");
+        var expected = new ArrayList<>(Arrays.asList(2.1, 3.2, 4.3, 5.4));
+        var fw = new FileWriter(f);
+        for (var d : expected) {
             fw.write(d.toString() + " ");
         }
         fw.close();
         Ch5_3.main(f.getAbsolutePath());
-        Double d = Double.parseDouble(out.toString());
+        var d = Double.parseDouble(out.toString());
         assertEquals(15.0, d, 0.001);
         f.deleteOnExit();
     }

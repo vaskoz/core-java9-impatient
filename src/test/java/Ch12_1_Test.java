@@ -21,24 +21,24 @@ public class Ch12_1_Test {
 
     @Test
     public void originalPlusDays() {
-        for (LocalDate ld : programmerDates) {
-            LocalDate pd = Ch12_1.plusDaysVersion(ld.getYear());
+        for (var ld : programmerDates) {
+            var pd = Ch12_1.plusDaysVersion(ld.getYear());
             assertEquals(ld, pd);
         }
     }
 
     @Test
     public void newVersion() {
-        for (LocalDate ld : programmerDates) {
-            LocalDate pd = Ch12_1.newVersion(ld.getYear());
+        for (var ld : programmerDates) {
+            var pd = Ch12_1.newVersion(ld.getYear());
             assertEquals(ld, pd);
         }
     }
 
     @Test
     public void useConstants() {
-        for (LocalDate ld : programmerDates) {
-            LocalDate pd = Ch12_1.useConstant(ld.getYear());
+        for (var ld : programmerDates) {
+            var pd = Ch12_1.useConstant(ld.getYear());
             assertEquals(ld, pd);
         }
     }

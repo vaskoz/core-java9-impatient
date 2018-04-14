@@ -17,7 +17,7 @@ public class Ch6_4 {
         }
 
         public void remove(K key) {
-            for (Entry<K, V> entry : this.data) {
+            for (var entry : this.data) {
                 if (entry.getKey().equals(key)) {
                     this.data.remove(entry);
                     return;
@@ -26,7 +26,7 @@ public class Ch6_4 {
         }
 
         public V get(K key) {
-            for (Entry<K, V> entry : this.data) {
+            for (var entry : this.data) {
                 if (entry.getKey().equals(key)) {
                     return entry.getValue();
                 }
@@ -35,7 +35,7 @@ public class Ch6_4 {
         }
 
         public void set(K key, V value) {
-            for (Entry<K, V> entry : this.data) {
+            for (var entry : this.data) {
                 if (entry.getKey().equals(key)) {
                     entry.setValue(value);
                     return;

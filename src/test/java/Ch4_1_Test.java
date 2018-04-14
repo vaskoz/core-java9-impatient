@@ -19,14 +19,14 @@ public class Ch4_1_Test {
 
     @Test
     public void testPoint() {
-        Ch4_1.Point p = app.new Point(1, 2);
+        var p = app.new Point(1, 2);
         assertEquals(1, p.getX());
         assertEquals(2, p.getY());
     }
 
     @Test
     public void testLabeledPoint() {
-        Ch4_1.LabeledPoint labeledPoint = app.new LabeledPoint(1, 2, "foo");
+        var labeledPoint = app.new LabeledPoint(1, 2, "foo");
         assertEquals(1, labeledPoint.getX());
         assertEquals(2, labeledPoint.getY());
         assertEquals("foo", labeledPoint.getLabel());

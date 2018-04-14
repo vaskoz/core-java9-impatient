@@ -9,13 +9,13 @@ public class Ch7_1 {
         if (n < 2) {
             throw new IllegalArgumentException("value of n must be greater than 2");
         }
-        Set<Integer> numbers = new HashSet<>(n);
-        for (int i = 2; i <= n && i >= 2; i++) {
+        var numbers = new HashSet<Integer>(n);
+        for (var i = 2; i <= n && i >= 2; i++) {
             numbers.add(i);
         }
-        for (int i = 2; i <= Math.sqrt((double) n); i++) {
+        for (var i = 2; i <= Math.sqrt((double) n); i++) {
             if (numbers.contains(i)) {
-                for (int j = i * i; j <= n && j > 0; j += i) {
+                for (var j = i * i; j <= n && j > 0; j += i) {
                     numbers.remove(j);
                 }
             }
@@ -27,19 +27,19 @@ public class Ch7_1 {
         if (n < 2) {
             throw new IllegalArgumentException("value of n must be greater than 2");
         }
-        BitSet numbers = new BitSet(n);
-        for (int i = 2; i <= n && i >= 2; i++) {
+        var numbers = new BitSet(n);
+        for (var i = 2; i <= n && i >= 2; i++) {
             numbers.set(i);
         }
-        for (int i = 2; i <= Math.sqrt((double) n); i++) {
+        for (var i = 2; i <= Math.sqrt((double) n); i++) {
             if (numbers.get(i)) {
-                for (int j = i * i; j <= n && j >= 0; j += i) {
+                for (var j = i * i; j <= n && j >= 0; j += i) {
                     numbers.clear(j);
                 }
             }
         }
-        List<Integer> result = new ArrayList<>(numbers.cardinality());
-        int i = numbers.nextSetBit(0);
+        var result = new ArrayList<Integer>(numbers.cardinality());
+        var i = numbers.nextSetBit(0);
         while (i + 1 > 0) {
             result.add(i);
             i = numbers.nextSetBit(i + 1);

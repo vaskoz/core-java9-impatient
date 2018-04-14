@@ -22,7 +22,7 @@ public class Ch4_11_Test {
 
     @Test
     public void reflectiveHelloWorld() {
-        ByteArrayOutputStream out = new ByteArrayOutputStream(100);
+        var out = new ByteArrayOutputStream(100);
         System.setOut(new PrintStream(out));
         try {
             Ch4_11.main();

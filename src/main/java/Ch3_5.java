@@ -4,7 +4,11 @@ public class Ch3_5 {
             // Extra credit for lambda.
             return () -> c;
         }
-        default boolean hasNext() { return true; };
+
+        default boolean hasNext() {
+            return true;
+        }
+        
         int next();
     }
 }

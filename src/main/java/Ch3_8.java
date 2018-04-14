@@ -10,8 +10,8 @@ public class Ch3_8 {
     }
 
     static boolean isSorted(ArrayList<String> strings, Comparator<String> comp) {
-        for (int i = 0; i < strings.size()-1; i++) {
-            if (comp.compare(strings.get(i), strings.get(i+1)) > 0) {
+        for (var i = 0; i < strings.size() - 1; i++) {
+            if (comp.compare(strings.get(i), strings.get(i + 1)) > 0) {
                 return false;
             }
         }

@@ -36,11 +36,11 @@ public class Ch1_13_Test {
     @Test
     void check() {
         Ch1_13.main(null);
-        String[] parts = this.out.toString().trim().split(" ");
+        var parts = this.out.toString().trim().split(" ");
         assertEquals(6, parts.length);
-        int last = 0;
-        for (int i = 0; i < parts.length; i++) {
-            int val = Integer.valueOf(parts[i]);
+        var last = 0;
+        for (String part : parts) {
+            var val = Integer.valueOf(part);
             assertTrue(val >= last);
             last = val;
         }

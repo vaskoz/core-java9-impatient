@@ -13,20 +13,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class Ch3_8_Test {
     @Test
     public void testLuckySort() {
-        Comparator<String> cmp = Comparator.naturalOrder();
-        ArrayList<String> data = new ArrayList<>(Arrays.asList("bird", "ant", "door", "cat", "zebra", "everything"));
+        var cmp = Comparator.<String>naturalOrder();
+        var data = new ArrayList<>(Arrays.asList("bird", "ant", "door", "cat", "zebra", "everything"));
         Ch3_8.luckySort(data, cmp);
         assertTrue(Ch3_8.isSorted(data, cmp));
     }
 
     @Test
     public void testIsSorted() {
-        Comparator<String> cmp = Comparator.naturalOrder();
-        ArrayList<String> notSorted = new ArrayList<>(Arrays.asList("bird", "ant", "door", "cat", "zebra", "everything"));
+        var cmp = Comparator.<String>naturalOrder();
+        var notSorted = new ArrayList<>(Arrays.asList("bird", "ant", "door", "cat", "zebra", "everything"));
         assertFalse(Ch3_8.isSorted(notSorted, cmp));
 
         notSorted.sort(cmp);
         assertTrue(Ch3_8.isSorted(notSorted, cmp));
-
     }
 }

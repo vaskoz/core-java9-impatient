@@ -27,7 +27,7 @@ public class Ch3_13_Test {
 
     @AfterAll
     public static void teardown() {
-        for (File f : expected) {
+        for (var f : expected) {
             try {
                 Files.deleteIfExists(f.toPath());
             } catch (IOException e) {
@@ -38,7 +38,7 @@ public class Ch3_13_Test {
 
     @Test
     public void testFileSort() {
-        File[] input = new File[]{
+        var input = new File[]{
                 expected[4], expected[2], expected[0], expected[1], expected[3]
         };
         Ch3_13.sortFiles(input);
@@ -47,7 +47,7 @@ public class Ch3_13_Test {
 
     @Test
     public void testFileSortDifferentOrder() {
-        File[] input = new File[]{
+        var input = new File[]{
                 expected[0], expected[1], expected[2], expected[4], expected[3]
         };
         Ch3_13.sortFiles(input);

@@ -18,14 +18,14 @@ public class Ch7_5 {
      * Conserve sequential traversal by using a single iterator
      */
     private static <E> void sequentialAccessSwap(List<E> list, int i, int j) {
-        ListIterator<E> iter = list.listIterator(i);
+        var iter = list.listIterator(i);
         E first = iter.next();
-        for (int x = i + 1; x < j; x++) {
+        for (var x = i + 1; x < j; x++) {
             iter.next();
         }
         E second = iter.next();
         iter.set(first);
-        for (int x = j; x >= i; x--) {
+        for (var x = j; x >= i; x--) {
             iter.previous();
         }
         iter.set(second);

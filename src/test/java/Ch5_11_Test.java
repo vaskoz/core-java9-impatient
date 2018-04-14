@@ -30,7 +30,7 @@ public class Ch5_11_Test {
     public void testFactorial() {
         assertThrows(IllegalArgumentException.class, () -> Ch5_11.factorial(-1));
         assertEquals(BigInteger.valueOf(3628800), Ch5_11.factorial(10));
-        String want = "Ch5_11.factorial(Ch5_11.java:12)\n" +
+        var want = "Ch5_11.factorial(Ch5_11.java:12)\n" +
                 "Ch5_11.factorial(Ch5_11.java:12)\n" +
                 "Ch5_11.factorial(Ch5_11.java:17)\n" +
                 "Ch5_11.factorial(Ch5_11.java:12)\n" +

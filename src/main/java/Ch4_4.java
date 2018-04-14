@@ -20,7 +20,7 @@ public class Ch4_4 {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
 
-            Point point = (Point) o;
+            var point = (Point) o;
 
             if (Double.compare(point.x, x) != 0) return false;
             return Double.compare(point.y, y) == 0;
@@ -28,13 +28,10 @@ public class Ch4_4 {
 
         @Override
         public int hashCode() {
-            int result;
-            long temp;
-            temp = Double.doubleToLongBits(x);
-            result = (int) (temp ^ (temp >>> 32));
+            var temp = Double.doubleToLongBits(x);
+            var result = (int) (temp ^ (temp >>> 32));
             temp = Double.doubleToLongBits(y);
-            result = 31 * result + (int) (temp ^ (temp >>> 32));
-            return result;
+            return 31 * result + (int) (temp ^ (temp >>> 32));
         }
     }
 
@@ -83,8 +80,8 @@ public class Ch4_4 {
          */
         @Override
         public Point getCenter() {
-            double newX = (2 * this.point.getX() + this.width) / 2; // go positive X (right from left)
-            double newY = (2 * this.point.getY() - this.height) / 2; // go negative Y (down from top)
+            var newX = (2 * this.point.getX() + this.width) / 2; // go positive X (right from left)
+            var newY = (2 * this.point.getY() - this.height) / 2; // go negative Y (down from top)
             return new Point(newX, newY);
         }
     }
@@ -97,8 +94,8 @@ public class Ch4_4 {
             super(null);
             this.from = from;
             this.to = to;
-            double centerX = (this.from.getX() + this.to.getX()) / 2;
-            double centerY = (this.from.getY() + this.to.getY()) / 2;
+            var centerX = (this.from.getX() + this.to.getX()) / 2;
+            var centerY = (this.from.getY() + this.to.getY()) / 2;
             this.point = new Point(centerX, centerY);
         }
 
@@ -114,5 +111,4 @@ public class Ch4_4 {
             this.to = new Point(this.to.getX() + dx, this.to.getY() + dy);
         }
     }
-
 }

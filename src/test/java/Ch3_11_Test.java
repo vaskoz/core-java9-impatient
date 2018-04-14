@@ -19,10 +19,10 @@ public class Ch3_11_Test {
     public static void setup() {
         try {
             tempDir = Files.createTempDirectory(null);
-            File td = tempDir.toFile();
-            File sd1 = new File(td, "bar");
+            var td = tempDir.toFile();
+            var sd1 = new File(td, "bar");
             assertTrue(sd1.mkdir());
-            File sd2 = new File(td, "baz");
+            var sd2 = new File(td, "baz");
             assertTrue(sd2.mkdir());
             dirs.push(td);
             dirs.push(sd1);
@@ -35,26 +35,26 @@ public class Ch3_11_Test {
     @AfterAll
     public static void teardown() {
         while (!dirs.empty()) {
-            File f = dirs.pop();
+            var f = dirs.pop();
             assertTrue(f.delete());
         }
     }
 
     @Test
     public void testGetSubdirectories() {
-        List<File> result = Ch3_11.getSubdirectories(tempDir.toString());
+        var result = Ch3_11.getSubdirectories(tempDir.toString());
         assertEquals(2, result.size());
     }
 
     @Test
     public void testGetSubdirectoriesLambda() {
-        List<File> result = Ch3_11.getSubdirectoriesLambda(tempDir.toString());
+        var result = Ch3_11.getSubdirectoriesLambda(tempDir.toString());
         assertEquals(2, result.size());
     }
 
     @Test
     public void testGetSubdirectoriesReference() {
-        List<File> result = Ch3_11.getSubdirectoriesReference(tempDir.toString());
+        var result = Ch3_11.getSubdirectoriesReference(tempDir.toString());
         assertEquals(2, result.size());
     }
 }
