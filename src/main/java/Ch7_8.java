@@ -11,20 +11,20 @@ public class Ch7_8 {
         if (args.length != 1) {
             throw new IllegalArgumentException("must provide a filename");
         }
-        Map<String, Set<String>> counts = new HashMap<>();
-        try (Scanner in = new Scanner(new File(args[0]))) {
-            int line = 1;
+        var counts = new HashMap<String, Set<String>>();
+        try (var in = new Scanner(new File(args[0]))) {
+            var line = 1;
             while (in.hasNextLine()) {
-                String[] words = in.nextLine().split(" ");
-                for (String word : words) {
-                    Set<String> lines = counts.getOrDefault(word, new TreeSet<>());
+                var words = in.nextLine().split(" ");
+                for (var word : words) {
+                    var lines = counts.getOrDefault(word, new TreeSet<>());
                     lines.add(String.valueOf(line));
                     counts.put(word, lines);
                 }
                 line++;
             }
         }
-        for (Map.Entry<String, Set<String>> entry : counts.entrySet()) {
+        for (var entry : counts.entrySet()) {
             System.out.println("Word is: " + entry.getKey() + " with lines: " + "".join(",", entry.getValue()));
         }
     }
