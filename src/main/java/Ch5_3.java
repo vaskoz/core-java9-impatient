@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 
 public class Ch5_3 {
     public static void main(String... args) {
-        Ch5_2 app = new Ch5_2();
+        var app = new Ch5_2();
         if (args.length != 1) {
             System.err.println("must provide filename to read doubles");
             return;

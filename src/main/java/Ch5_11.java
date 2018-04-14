@@ -8,7 +8,7 @@ public class Ch5_11 {
         if (n == 0 || n == 1) {
             return BigInteger.ONE;
         }
-        StackWalker walker = StackWalker.getInstance();
+        var walker = StackWalker.getInstance();
         walker.forEach(stackFrame -> {
             if (stackFrame.getClassName().equals("Ch5_11")) {
                 System.out.println(stackFrame);

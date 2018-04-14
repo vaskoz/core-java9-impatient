@@ -2,7 +2,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Ch5_9 {
     public static AutoCloseableReentrantLock lock() {
-        AutoCloseableReentrantLock reentrantLock = new AutoCloseableReentrantLock();
+        var reentrantLock = new AutoCloseableReentrantLock();
         reentrantLock.lock();
         return reentrantLock;
     }
