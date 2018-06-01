@@ -10,15 +10,11 @@ buildscript {
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.2.0'
-    }
 }
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'org.junit.platform.gradle.plugin'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -37,4 +33,8 @@ dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testCompile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
 }
