@@ -6,8 +6,11 @@ public class Ch13_4 {
     public static Set<String> getAllLanguages() {
         var result = new HashSet<String>();
         for (var locale : Locale.getAvailableLocales()) {
-            if (!locale.getLanguage().isEmpty()) {
-                result.add(locale.getLanguage());
+            for (var inLocale : Locale.getAvailableLocales()) {
+                var displayLanguage = locale.getDisplayLanguage(inLocale);
+                if (!displayLanguage.isEmpty()) {
+                    result.add(displayLanguage);
+                }
             }
         }
         return result;
