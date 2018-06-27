@@ -25,7 +25,7 @@ repositories {
 }
 
 sourceCompatibility = 1.11
-//targetCompatibility = 1.9 // defaults to 'sourceCompatibility'
+//targetCompatibility = 1.11 // defaults to 'sourceCompatibility'
 
 // In this section you declare the dependencies for your production and test code
 def junitVersion = "5.2.0"
