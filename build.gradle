@@ -15,7 +15,6 @@ buildscript {
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'jacoco'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -24,7 +23,7 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.10
+sourceCompatibility = 1.11
 //targetCompatibility = 1.9 // defaults to 'sourceCompatibility'
 
 // In this section you declare the dependencies for your production and test code
