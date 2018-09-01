@@ -17,15 +17,6 @@ repositories {
 
 jacoco {
     toolVersion = "0.8.2"
-    reportsDir = file("$buildDir/customJacocoReportDir")
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled false
-        csv.enabled false
-        html.destination file("${buildDir}/jacocoHtml")
-    }
 }
 
 sourceCompatibility = 1.11
