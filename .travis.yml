@@ -6,7 +6,7 @@ install:
   - cd ${HOME}
   - wget https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_linux-x64_bin.tar.gz
   - tar -xzf openjdk-12-ea+27_linux-x64_bin.tar.gz
-  - export JAVA_HOME=${HOME}/jdk-12.jdk
+  - export JAVA_HOME=${HOME}/jdk-12
   - export PATH=${JAVA_HOME}/bin:${PATH}
   - java -version
   - cd -
