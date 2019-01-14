@@ -19,7 +19,7 @@ jacoco {
     toolVersion = "0.8.2"
 }
 
-sourceCompatibility = 1.11
+sourceCompatibility = 1.12
 //targetCompatibility = 1.11 // defaults to 'sourceCompatibility'
 
 // In this section you declare the dependencies for your production and test code
