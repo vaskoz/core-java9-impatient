@@ -4,9 +4,9 @@ language: java
 install:
   - mkdir -p ${HOME}
   - cd ${HOME}
-  - wget https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz
-  - tar -xzf openjdk-11.0.1_linux-x64_bin.tar.gz
-  - export JAVA_HOME=${HOME}/jdk-11.0.1
+  - wget https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_linux-x64_bin.tar.gz
+  - tar -xzf openjdk-12-ea+27_linux-x64_bin.tar.gz
+  - export JAVA_HOME=${HOME}/jdk-12.jdk
   - export PATH=${JAVA_HOME}/bin:${PATH}
   - java -version
   - cd -
